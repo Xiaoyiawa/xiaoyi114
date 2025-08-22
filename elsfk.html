@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简易俄罗斯方块</title>
+    <title>俄罗斯方块 - 修复版</title>
     <style>
         * {
             margin: 0;
@@ -21,6 +21,7 @@
             justify-content: center;
             padding: 20px;
             color: white;
+            overflow: hidden; /* 防止整个页面滚动 */
         }
         
         .container {
@@ -575,6 +576,11 @@
             // 事件监听
             document.addEventListener('keydown', event => {
                 if (gameOver) return;
+                
+                // 阻止箭头键和空格键的默认行为（页面滚动）
+                if ([37, 38, 39, 40, 32].includes(event.keyCode)) {
+                    event.preventDefault();
+                }
                 
                 switch (event.keyCode) {
                     case 37: // 左箭头
