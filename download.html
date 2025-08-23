@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>下载中心</title>
+    <title>资源下载</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -32,7 +32,6 @@
             min-height: 100vh;
         }
         
-        /* 顶部导航栏样式 */
         header {
             padding: 30px 0;
             text-align: center;
@@ -77,7 +76,6 @@
             background-color: #f8f8f8;
         }
         
-        /* 下载目录样式 */
         .downloads-section {
             flex: 1;
         }
@@ -152,6 +150,12 @@
             border-top: 1px solid #f1f1f1;
         }
         
+        .download-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
         .download-btn {
             display: block;
             background-color: #4db8ff;
@@ -162,6 +166,7 @@
             font-weight: 500;
             transition: background-color 0.3s;
             text-align: center;
+            position: relative;
         }
         
         .download-btn:hover {
@@ -172,7 +177,24 @@
             margin-right: 8px;
         }
         
-        /* 底部声明样式 */
+        .alt-download {
+            background-color: #f8f8f8;
+            color: #555555;
+            border: 1px solid #f1f1f1;
+        }
+        
+        .alt-download:hover {
+            background-color: #eaeaea;
+            color: #333333;
+        }
+        
+        .download-info {
+            font-size: 0.8rem;
+            color: #777777;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
         footer {
             text-align: center;
             padding: 30px 0;
@@ -208,7 +230,6 @@
             color: #4db8ff;
         }
         
-        /* 响应式设计 */
         @media (max-width: 768px) {
             .downloads-grid {
                 grid-template-columns: 1fr;
@@ -233,9 +254,8 @@
 </head>
 <body>
     <div class="container">
-        <!-- 顶部导航栏 -->
         <header>
-            <h1 class="site-title">下载中心</h1>
+            <h1 class="site-title">资源下载</h1>
             
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
@@ -245,13 +265,12 @@
             </ul>
         </header>
         
-        <section class="downloads-section">
+         <section class="downloads-section">
             <div class="downloads-header">
                 <h1>所有资源</h1>
             </div>
-            
             <div class="downloads-grid">
-                <!-- 下载项目 1 -->
+                <!-- 下载项目1 -->
                 <div class="download-card">
                     <div class="download-icon">
                         <i class="fas fa-file"></i>
@@ -259,13 +278,17 @@
                     <h3 class="download-title">adb小工具箱</h3>
                     <p class="download-description">我自己写的工具箱，不是太好...</p>
                     <div class="download-meta">
-                        <span>工具</span>
+                        <span>zip压缩文件</span>
                         <span>23.5 MB</span>
                     </div>
-                    <a href="https://github.com/Xiaoyiawa/pan/releases/download/114/adb.zip" class="download-btn"><i class="fas fa-download"></i> 下载</a>
+                    <div class="download-actions">
+                        <a href="https://github.com/Xiaoyiawa/pan/releases/download/114/adb.zip" class="download-btn"><i class="fas fa-download"></i> 主下载链接</a>
+                        <a href="https://gh-proxy.com/https://github.com/Xiaoyiawa/pan/releases/download/114/adb.zip" class="download-btn alt-download"><i class="fas fa-link"></i> 备用下载路线</a>
+                        <p class="download-info">如果主链接无法访问，请尝试备用路线</p>
+                    </div>
                 </div>
                 
-                <!-- 下载项目 2 -->
+                <!-- 下载项目2 -->
                 <div class="download-card">
                     <div class="download-icon">
                         <i class="fas fa-file"></i>
@@ -273,29 +296,36 @@
                     <h3 class="download-title">精简java21</h3>
                     <p class="download-description">极限精简过的Java21可用于启动minecaft（注:此java为jre运行环境并非jdk开发工具）</p>
                     <div class="download-meta">
-                        <span>工具</span>
+                        <span>zip压缩文件</span>
                         <span>30.9 MB</span>
                     </div>
-                    <a href="https://github.com/Xiaoyiawa/pan/releases/download/java21/java.zip" class="download-btn"><i class="fas fa-download"></i> 下载</a>
+                    <div class="download-actions">
+                        <a href="https://github.com/Xiaoyiawa/pan/releases/download/java21/java.zip" class="download-btn"><i class="fas fa-download"></i> 主下载链接</a>
+                        <a href="https://gh-proxy.com/https://github.com/Xiaoyiawa/pan/releases/download/java21/java.zip" class="download-btn alt-download"><i class="fas fa-link"></i> 备用下载路线</a>
+                        <p class="download-info">如果主链接无法访问，请尝试备用路线</p>
+                    </div>
                 </div>
                 
-                <!-- 下载项目 3 -->
+                <!-- 下载项目3 -->
                 <div class="download-card">
                     <div class="download-icon">
                         <i class="fas fa-file"></i>
                     </div>
-                    <h3 class="download-title">无</h3>
-                    <p class="download-description">无</p>
+                    <h3 class="download-title">文件标题</h3>
+                    <p class="download-description">在这里添加文件描述，说明文件的内容和用途。</p>
                     <div class="download-meta">
-                        <span>无</span>
-                        <span>0.0 KB</span>
+                        <span>文件类型</span>
+                        <span>文件大小</span>
                     </div>
-                    <a href="#" class="download-btn"><i class="fas fa-download"></i> 下载</a>
+                    <div class="download-actions">
+                        <a href="#" class="download-btn"><i class="fas fa-download"></i> 主下载链接</a>
+                        <a href="#" class="download-btn alt-download"><i class="fas fa-link"></i> 备用下载路线</a>
+                        <p class="download-info">如果主链接无法访问，请尝试备用路线</p>
+                    </div>
                 </div>
-            </div>
+                
         </section>
         
-        <!-- 底部声明 -->
         <footer>
             <div class="footer-content">
                 <p>no copyright</p>
@@ -307,5 +337,4 @@
         </footer>
     </div>
 </body>
-
 </html>
