@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎回来(*^▽^*)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        /* 顶部导航栏 */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #f1f1f1; /* 分隔线 */
+            margin-bottom: 40px;
+        }
+        
+        .site-title {
+            font-size: 2.2rem;
+            color: #333333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .site-description {
+            color: #777777;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            color: #4db8ff; /* 淡蓝色 */
+            background-color: #f8f8f8;
+        }
+        
+        /* 中间的框 */
+        .article-box {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #f1f1f1; /* 淡灰色边框 */
+            margin-bottom: 40px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f1f1f1; /* 淡灰色分隔线 */
+        }
+        
+        .article-header h1 {
+            color: #333333;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .meta {
+            color: #777777;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #444444;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content h2 {
+            color: #333333;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f1f1; /* 淡灰色分隔线 */
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #4db8ff; /* 淡蓝色 */
+            padding: 15px 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            color: #555555;
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4db8ff; /* 淡蓝色按钮 */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #3aa8f0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        /* 底部声明样式 */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #f1f1f1; /* 淡灰色分隔线 */
+            color: #777777;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin: 5px 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: #777777;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #4db8ff; /* 淡蓝色 */
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .article-box {
+                padding: 25px;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .site-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-box {
+                padding: 20px;
+            }
+            
+            .article-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <header>
+            <h1 class="site-title">我的小网站</h1>
+            <p class="site-description">请输入文本</p>
+            
+            <ul class="nav-links">
+                <li><a href="#">首页</a></li>
+                <li><a href="download.html">下载</a></li>
+                <li><a href="allweb.html">网址推荐</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </header>
+        
+        <!-- 中间的文章框 -->
+        <main class="article-box">
+            <div class="article-header">
+                <h1>请输入文本</h1>
+            </div>
+            
+            <div class="article-content">
+                <!-- 这里将是您的文章内容。您可以自由地编辑和添加您想要的任何内容。 -->
+                <p>棍母棍母棍母棍母棍母棍母2棍母棍母棍母棍母棍母棍母棍母棍母棍母棍母棍母</p>
+                
+                <h2>章节标题</h2>
+                
+                <p>这是一个棍母。哇袄！！！！！</p>
+                
+                <blockquote>
+                    这是一个大78。您可以使用它来突出显示重要的引用或内容♂。
+                </blockquote>
+                
+                <p>点击输入棍母</p>
+                
+                <h2>干嘛干嘛干嘛</h2>
+                
+                <p>马里奥</p>
+                
+                <p>这是一个棍母。哇袄！！！！！</p>
+
+            </div>
+        </main>
+        
+        <!-- 底部我的噼里啪啦账号 -->
+        <footer>
+            <div class="footer-content">
+                <p>no copyright</p>
+                <div class="social-links">
+                    <a href="https://space.bilibili.com/1305505264"><i class="fab fa-bilibili"></i></a>
+                    <a href="https://github.com/Xiaoyiawa/xiaoyi114"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
