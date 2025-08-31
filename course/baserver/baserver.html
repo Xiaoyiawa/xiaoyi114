@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谁是杀手开服教程</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        /* 顶部的导航栏吧 */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #f1f1f1; /* 分隔线 */
+            margin-bottom: 40px;
+        }
+        
+        .site-title {
+            font-size: 2.2rem;
+            color: #333333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        a:link {
+            color: #4db8ff;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #4db8ff;
+            text-decoration: none;
+        }
+
+        .site-description {
+            color: #777777;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            color: #4db8ff; /* 淡蓝色 */
+            background-color: #f8f8f8;
+        }
+        
+        /* 中间的框框！ */
+        .article-box {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #f1f1f1; /* 淡灰色边框 */
+            margin-bottom: 40px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f1f1f1; /* 淡灰色分隔线 */
+        }
+        
+        .article-header h1 {
+            color: #333333;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .meta {
+            color: #777777;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #444444;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content h2 {
+            color: #333333;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f1f1; /* 淡灰色分隔线 */
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #4db8ff; /* 淡蓝色 */
+            padding: 15px 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+            color: #555555;
+            font-style: italic;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4db8ff; /* 淡蓝色按钮 */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #3aa8f0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        /* 底部噼里啪啦样式 */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #f1f1f1; /* 淡灰色分隔线 */
+            color: #777777;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin: 5px 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: #777777;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #4db8ff; /* 淡蓝色 */
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .article-box {
+                padding: 25px;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .site-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-box {
+                padding: 20px;
+            }
+            
+            .article-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="site-title">所有教程</h1>
+            
+            <ul class="nav-links">
+                <li><a href="https://xiaoyiawa.github.io/xiaoyi114/index">首页</a></li>
+                <li><a href="https://xiaoyiawa.github.io/xiaoyi114/download">下载</a></li>
+                <li><a href="https://xiaoyiawa.github.io/xiaoyi114/course">教程</a></li>
+                <li><a href="https://xiaoyiawa.github.io/xiaoyi114/about">关于</a></li>
+            </ul>
+        </header>
+        <main class="article-box">
+            
+            <div class="article-content">
+                <!-- 文章内容 -->
+                 <h2>你是否想和朋友们玩百大up主们的同款"谁是杀手？！"<br>
+                 却不知道怎么弄吗？<br>
+                 今天我来教你如何开服！</h2>
+
+                <p>准备工作</p>                
+                <p>你需要一台电脑，或者一台服务器</p>
+                <p>一张谁是杀手的地图，和一个mc java的服务端</p>
+                <p>java jdk-21运行环境，和一个可以思考的脑子</p>
+                <h2>第一步：准备工作</h2>
+                <p>挑选一个服务端<br>（注：某些服务端，比如folia端，可能会导致世界数据包加载错误！）</p>
+                <p>这里以windows系统，fabric端进行演示</p>
+                <p>打开fabric官方网站<a href="https://fabricmc.net/use/installer">fabric官网</a></p>
+                <p>选择 "Download for Windows"<br>如图:</p>                    <img src="jpg1.png" style="width: 850px; height: 250px;">
+                <p>等待下载完成</p>
+                <p>打开文件</p>
+                <blockquote>
+                如提示错误窗口请检查是否安装了java环境<br><a href="https://download.oracle.com/java/21/archive/jdk-21.0.7_windows-x64_bin.exe">下载JAVA21</a>
+                </blockquote>
+                <p>在打开的窗口选择服务端</p>
+                    <div style="width: 500px; margin: 0 auto;">
+                        <img src="jpg2.png"/>
+                    </div>
+                <p>选择1.21.4正式版版本</p>
+                <p>加载器版本可以不管</p>
+                <p>选择安装位置（按情况所改）</p>
+                <p>我这里就安装在D盘了</p>
+                    <div style="width: 500px; margin: 0 auto;">
+                        <img src="jpg3.png"/>
+                    </div>
+                <p>随后点击安装即可</p>
+                <p>等待...</p>
+                <p>下好后会弹出一个窗口 如图：</p>
+                    <div style="width: 500px; margin: 0 auto;">
+                        <img src="jpg4.png"/>
+                    </div>
+                <p>点击"下载服务端"</p>
+                <p>下完后可以点一下"生成启动脚本"</p>
+                <p>点击安装完成</p>
+                <h2 align="center">恭喜你做到这一步打败了全国%15的朋友！<br>（鼓掌鼓掌）</h2>
+                <h2>第2步 安装地图</h2>
+                <p>首先我们得"激活一下服务端"</p>
+                <p>运行我们的启动脚本start.bat</p>
+                <p>如图：</p>
+                        <img src="jpg5.png" style="width: 877.5;" height="459">
+                <p>中途会提示按任意键继续</p>
+                        <img src="jpg6.png" style="width: 792.35;" height="410.15">
+                <p>这是因为我们没有同意eula协议</p>
+                <p>在服务器目录下找到eula.txt文件</p>
+                <p>如图：</p>
+                        <img src="jpg7.png" style="width: 792.35;" height="410.15">
+
+                        <img src="jpg8.png" style="width: 800;" height="411">
+                <p>在启动一次就可以了</p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </main>
+        
+        <!-- 噼里啪啦账号 -->
+        <footer>
+            <div class="footer-content">
+                <p>no copyright</p>
+                <div class="social-links">
+                    <a href="https://space.bilibili.com/1305505264"><i class="fab fa-bilibili"></i></a>
+                    <a href="https://github.com/Xiaoyiawa/xiaoyi114"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
